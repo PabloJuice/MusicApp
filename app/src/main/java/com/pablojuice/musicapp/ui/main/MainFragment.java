@@ -1,39 +1,17 @@
 package com.pablojuice.musicapp.ui.main;
 
-import androidx.lifecycle.ViewModelProvider;
-
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.pablojuice.musicapp.R;
+import com.pablojuice.musicapp.core.BaseFragment;
+import com.pablojuice.musicapp.databinding.FragmentMainBinding;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment<FragmentMainBinding> {
 
-    private MainViewModel mViewModel;
-
-    public static MainFragment newInstance() {
-        return new MainFragment();
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main_fragment, container, false);
-    }
+    private MainViewModel viewModel;
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        // TODO: Use the ViewModel
+    protected FragmentMainBinding bindLayout(LayoutInflater inflater, ViewGroup container) {
+        return FragmentMainBinding.inflate(inflater, container, false);
     }
-
 }
