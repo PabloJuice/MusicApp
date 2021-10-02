@@ -47,8 +47,8 @@ public class MusicUtil {
 
     public static void loadImageFromLink(String imageSrc,
                                               ImageView imageView, Context context) {
-        imageView.post(() -> Glide.with(context)
-                .load(imageSrc).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+        imageView.post(() -> GlideApp.with(context)
+                .load(imageSrc)
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e,
