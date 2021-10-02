@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.pablojuice.musicapp.core.BaseFragment;
@@ -49,5 +50,6 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> {
     private void setupRecyclerView(){
         adapter = new MusicListAdapter(null);
         binding.musicRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.musicRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
     }
 }
