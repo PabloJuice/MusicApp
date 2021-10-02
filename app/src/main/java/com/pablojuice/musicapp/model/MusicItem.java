@@ -1,5 +1,7 @@
 package com.pablojuice.musicapp.model;
 
+import java.util.Objects;
+
 public class MusicItem {
     private String title;
     private String author;
@@ -36,5 +38,21 @@ public class MusicItem {
 
     public void setMusicSrc(String musicSrc) {
         this.musicSrc = musicSrc;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MusicItem musicItem = (MusicItem) o;
+        return Objects.equals(title, musicItem.title) && Objects.equals(author,
+                                                                        musicItem.author) && Objects.equals(
+                imageSrc,
+                musicItem.imageSrc) && Objects.equals(musicSrc, musicItem.musicSrc);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, imageSrc, musicSrc);
     }
 }

@@ -34,28 +34,33 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements M
         setupObservers();
     }
 
-    private void setupViewModel(){
+    private void setupViewModel() {
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
         viewModel.loadMusicRequest(requireActivity());
     }
 
-    private void setupObservers(){
-        viewModel.getMusicItems().observe(getViewLifecycleOwner(), response ->{
-            if (response != null){
-                adapter.setItems(response);
+    private void setupObservers() {
+        viewModel.getMusicItemsDto().observe(getViewLifecycleOwner(), response -> {
+            if (response != null) {
+                adapter.setItems(response.getData());
                 binding.musicRecyclerView.setAdapter(adapter);
             }
         });
     }
 
-    private void setupRecyclerView(){
+    private void setupRecyclerView() {
         adapter = new MusicListAdapter(null);
         binding.musicRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.musicRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        binding.musicRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                                                                              DividerItemDecoration.VERTICAL));
     }
 
     @Override
     public void onItemClicked(MusicItem musicItem) {
-        navController.navigate();
+        navController.navigate(
+                MainFragmentDirections.actionMainFragmentToMusicFragment(
+                        viewModel.getMusicItemsDto().getValue(),
+                        adapter.getItems().indexOf(musicItem))
+        );
     }
 }

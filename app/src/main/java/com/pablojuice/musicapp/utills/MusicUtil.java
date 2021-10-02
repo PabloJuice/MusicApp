@@ -18,18 +18,15 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
 import com.pablojuice.musicapp.R;
-import com.pablojuice.musicapp.model.MusicItem;
 import com.pablojuice.musicapp.model.MusicItemDto;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MusicUtil {
-    public static List<MusicItem> getMusicFromJson(String res) {
-        return new ArrayList<>(new Gson().fromJson(res,
-                                                   MusicItemDto.class).getData());
+    public static MusicItemDto getMusicDtoFromJson(String res) {
+        return new Gson().fromJson(res,
+                                   MusicItemDto.class);
     }
 
     public static String getJsonFromAsset(Activity activity, String filename) {
