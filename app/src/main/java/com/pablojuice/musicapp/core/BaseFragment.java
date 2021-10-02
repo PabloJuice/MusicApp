@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 public abstract class BaseFragment<B extends ViewDataBinding> extends Fragment {
 
@@ -27,6 +28,12 @@ public abstract class BaseFragment<B extends ViewDataBinding> extends Fragment {
         binding = bindLayout(inflater, container);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(binding.getRoot());
     }
 
     @Override
