@@ -36,4 +36,16 @@ public class MusicFragment extends BaseFragment<FragmentMusicFullScreenBinding> 
                         MusicFragmentArgs.fromBundle(getArguments()).getItemPosition(), false);
         binding.musicViewPager.setPageTransformer(new DepthPageTransformer());
     }
+
+    private void setupMusicPlayer(){
+        binding.musicPlayerController.playBtn
+                .setOnClickListener(v -> togglePlayer(binding.musicPlayerController.playBtn.isChecked()));
+    }
+
+    private void togglePlayer(boolean status){
+
+    }
+    private void changeMusic(){
+
+    }
 }
