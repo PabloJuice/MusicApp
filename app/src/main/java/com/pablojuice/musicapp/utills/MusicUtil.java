@@ -10,9 +10,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
@@ -46,7 +44,7 @@ public class MusicUtil {
     }
 
     public static void loadImageFromLink(String imageSrc,
-                                              ImageView imageView, Context context) {
+                                         ImageView imageView, Context context) {
         imageView.post(() -> GlideApp.with(context)
                 .load(imageSrc)
                 .listener(new RequestListener<Drawable>() {

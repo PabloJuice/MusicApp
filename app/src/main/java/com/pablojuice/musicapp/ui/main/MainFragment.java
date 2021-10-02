@@ -29,8 +29,8 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements M
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setupRecyclerView();
         setupViewModel();
+        setupRecyclerView();
         setupObservers();
     }
 

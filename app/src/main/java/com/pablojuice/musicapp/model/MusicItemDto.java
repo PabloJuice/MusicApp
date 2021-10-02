@@ -9,7 +9,8 @@ import java.util.List;
 public class MusicItemDto implements Parcelable {
     private List<MusicItem> data = new ArrayList<>();
 
-    public MusicItemDto(){}
+    public MusicItemDto() {
+    }
 
     public MusicItemDto(List<MusicItem> data) {
         this.data.addAll(data);

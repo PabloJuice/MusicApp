@@ -8,14 +8,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.pablojuice.musicapp.ui.animation.DepthPageTransformer;
-import com.pablojuice.musicapp.ui.core.BaseFragment;
 import com.pablojuice.musicapp.databinding.FragmentMusicFullScreenBinding;
 import com.pablojuice.musicapp.ui.adatpers.MusicFullScreenAdapter;
+import com.pablojuice.musicapp.ui.animation.DepthPageTransformer;
+import com.pablojuice.musicapp.ui.core.BaseFragment;
 
 public class MusicFragment extends BaseFragment<FragmentMusicFullScreenBinding> {
-
-    private MusicViewModel viewModel;
 
     @Override
     protected FragmentMusicFullScreenBinding bindLayout(LayoutInflater inflater,
