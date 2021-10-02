@@ -21,7 +21,7 @@
             app:argType="com.pablojuice.musicapp.model.MusicItemDto" />
         <argument
             android:name="itemPosition"
-            app:argType="int" />
+            app:argType="integer" />
         <action
             android:id="@+id/action_musicFragment_to_mainFragment"
             app:destination="@id/mainFragment" />

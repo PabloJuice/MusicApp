@@ -49,7 +49,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements M
     }
 
     private void setupRecyclerView() {
-        adapter = new MusicListAdapter(null);
+        adapter = new MusicListAdapter(this);
         binding.musicRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.musicRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                                                                               DividerItemDecoration.VERTICAL));
