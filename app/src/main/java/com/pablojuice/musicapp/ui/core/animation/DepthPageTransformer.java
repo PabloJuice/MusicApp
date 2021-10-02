@@ -1,4 +1,4 @@
-package com.pablojuice.musicapp.ui.animation;
+package com.pablojuice.musicapp.ui.core.animation;
 
 import android.view.View;
 

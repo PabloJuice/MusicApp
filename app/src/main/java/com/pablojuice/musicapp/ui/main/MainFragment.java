@@ -7,14 +7,16 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.pablojuice.musicapp.R;
 import com.pablojuice.musicapp.ui.core.BaseFragment;
 import com.pablojuice.musicapp.databinding.FragmentMainBinding;
 import com.pablojuice.musicapp.model.MusicItem;
-import com.pablojuice.musicapp.ui.adapters.MusicListAdapter;
+import com.pablojuice.musicapp.ui.core.adapters.MusicListAdapter;
 
 public class MainFragment extends BaseFragment<FragmentMainBinding> implements MusicListAdapter.MusicListItemClickListener {
 
@@ -51,8 +53,10 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements M
     private void setupRecyclerView() {
         adapter = new MusicListAdapter(this);
         binding.musicRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.musicRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
-                                                                              DividerItemDecoration.VERTICAL));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(),
+                                                                                DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.custom_divider_item, null));
+        binding.musicRecyclerView.addItemDecoration(dividerItemDecoration);
     }
 
     @Override
