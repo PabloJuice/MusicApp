@@ -1,4 +1,4 @@
-package com.pablojuice.musicapp.core;
+package com.pablojuice.musicapp.ui.core;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

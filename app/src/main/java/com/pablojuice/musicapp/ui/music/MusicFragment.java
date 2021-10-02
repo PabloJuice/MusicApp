@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.pablojuice.musicapp.core.BaseFragment;
+import com.pablojuice.musicapp.ui.animation.DepthPageTransformer;
+import com.pablojuice.musicapp.ui.core.BaseFragment;
 import com.pablojuice.musicapp.databinding.FragmentMusicFullScreenBinding;
 import com.pablojuice.musicapp.ui.adatpers.MusicFullScreenAdapter;
 
@@ -35,5 +36,6 @@ public class MusicFragment extends BaseFragment<FragmentMusicFullScreenBinding> 
         binding.musicViewPager
                 .setCurrentItem(
                         MusicFragmentArgs.fromBundle(getArguments()).getItemPosition());
+        binding.musicViewPager.setPageTransformer(new DepthPageTransformer());
     }
 }
