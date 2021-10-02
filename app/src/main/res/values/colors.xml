@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="grey_cloudy">#ecf0f1</color>
+    <color name="dark_orchid">#2b2b2b</color>
     <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>
     <color name="black">#FF000000</color>
