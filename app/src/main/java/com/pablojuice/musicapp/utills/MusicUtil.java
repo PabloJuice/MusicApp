@@ -3,8 +3,21 @@ package com.pablojuice.musicapp.utills;
 import static com.pablojuice.musicapp.utills.Constants.STANDARD_CHARSET;
 
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
+import com.pablojuice.musicapp.R;
 import com.pablojuice.musicapp.model.MusicItem;
 import com.pablojuice.musicapp.model.MusicItemDto;
 
@@ -14,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicUtil {
-    public static List<MusicItem> getVideosFromJson(String res) {
+    public static List<MusicItem> getMusicFromJson(String res) {
         return new ArrayList<>(new Gson().fromJson(res,
                                                    MusicItemDto.class).getData());
     }
@@ -33,5 +46,32 @@ public class MusicUtil {
             return null;
         }
         return json;
+    }
+
+    public static void loadImageFromLink(String imageSrc,
+                                              ImageView imageView, Context context) {
+        imageView.post(() -> Glide.with(context)
+                .load(imageSrc).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e,
+                                                Object model,
+                                                Target<Drawable> target,
+                                                boolean isFirstResource) {
+                        imageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
+                                                                               R.drawable.sync_error_icon,
+                                                                               null));
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource,
+                                                   Object model,
+                                                   Target<Drawable> target,
+                                                   DataSource dataSource,
+                                                   boolean isFirstResource) {
+                        return false;
+                    }
+                }).into(imageView));
     }
 }

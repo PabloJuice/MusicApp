@@ -23,32 +23,44 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            tools:text="Song name 123"
             android:text="@{item.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ivLogo"
-            app:layout_constraintTop_toTopOf="@+id/ivLogo" />
+            app:layout_constraintStart_toEndOf="@+id/ivContainer"
+            app:layout_constraintTop_toTopOf="@+id/ivContainer"
+            tools:text="Song name 123" />
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/tvAuthor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            tools:text="Author"
             android:text="@{item.author}"
-            app:layout_constraintBottom_toBottomOf="@+id/ivLogo"
+            app:layout_constraintBottom_toBottomOf="@+id/ivContainer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvTitle" />
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            tools:text="Author" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ivContainer"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/image_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
