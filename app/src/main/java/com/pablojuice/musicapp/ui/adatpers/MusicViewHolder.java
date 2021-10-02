@@ -1,7 +1,5 @@
 package com.pablojuice.musicapp.ui.adatpers;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;

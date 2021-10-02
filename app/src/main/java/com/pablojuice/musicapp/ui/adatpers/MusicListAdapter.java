@@ -1,5 +1,7 @@
 package com.pablojuice.musicapp.ui.adatpers;
 
+import static com.pablojuice.musicapp.utills.MusicUtil.loadImageFromLink;
+
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -11,7 +13,7 @@ import com.pablojuice.musicapp.model.MusicItem;
 
 import java.util.List;
 
-public class MusicListAdapter extends RecyclerView.Adapter<MusicListViewHolder> {
+public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.MusicListViewHolder> {
 
     private List<MusicItem> items;
     private MusicListItemClickListener onClickListener;
@@ -54,7 +56,24 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListViewHolder> 
         this.onClickListener = onClickListener;
     }
 
-    interface MusicListItemClickListener {
-        void onClick();
+    class MusicListViewHolder extends MusicViewHolder<MusicListItemBinding> {
+
+        public MusicListViewHolder(@NonNull MusicListItemBinding binding) {
+            super(binding);
+        }
+
+        @Override
+        protected void bind(MusicItem musicObject) {
+            loadImageFromLink(musicObject.getImageSrc(),
+                              binding.ivLogo,
+                              binding.getRoot().getContext());
+            binding.ivContainer.setClipToOutline(true);
+            binding.setItem(musicObject);
+            binding.getRoot().setOnClickListener(v -> onClickListener.onItemClicked(musicObject));
+        }
+    }
+
+    public interface MusicListItemClickListener {
+        void onItemClicked(MusicItem musicItem);
     }
 }

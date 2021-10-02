@@ -13,9 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.pablojuice.musicapp.core.BaseFragment;
 import com.pablojuice.musicapp.databinding.FragmentMainBinding;
+import com.pablojuice.musicapp.model.MusicItem;
 import com.pablojuice.musicapp.ui.adatpers.MusicListAdapter;
 
-public class MainFragment extends BaseFragment<FragmentMainBinding> {
+public class MainFragment extends BaseFragment<FragmentMainBinding> implements MusicListAdapter.MusicListItemClickListener {
 
     private MainViewModel viewModel;
     private MusicListAdapter adapter;
@@ -51,5 +52,10 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> {
         adapter = new MusicListAdapter(null);
         binding.musicRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.musicRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+    }
+
+    @Override
+    public void onItemClicked(MusicItem musicItem) {
+        navController.navigate();
     }
 }
