@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.pablojuice.musicapp.ui.core.BaseFragment;
 import com.pablojuice.musicapp.databinding.FragmentMainBinding;
 import com.pablojuice.musicapp.model.MusicItem;
-import com.pablojuice.musicapp.ui.adatpers.MusicListAdapter;
+import com.pablojuice.musicapp.ui.adapters.MusicListAdapter;
 
 public class MainFragment extends BaseFragment<FragmentMainBinding> implements MusicListAdapter.MusicListItemClickListener {
 

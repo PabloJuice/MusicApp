@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.pablojuice.musicapp.databinding.FragmentMusicFullScreenBinding;
-import com.pablojuice.musicapp.ui.adatpers.MusicFullScreenAdapter;
+import com.pablojuice.musicapp.ui.adapters.MusicFullScreenAdapter;
 import com.pablojuice.musicapp.ui.animation.DepthPageTransformer;
 import com.pablojuice.musicapp.ui.core.BaseFragment;
 

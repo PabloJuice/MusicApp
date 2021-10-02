@@ -1,4 +1,4 @@
-package com.pablojuice.musicapp.ui.adatpers;
+package com.pablojuice.musicapp.ui.adapters;
 
 import static com.pablojuice.musicapp.utills.MusicUtil.loadImageFromLink;
 

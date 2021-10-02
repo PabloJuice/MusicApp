@@ -1,4 +1,4 @@
-package com.pablojuice.musicapp.ui.adatpers;
+package com.pablojuice.musicapp.ui.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ViewDataBinding;
