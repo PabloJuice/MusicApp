@@ -7,5 +7,20 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.pablojuice.musicapp.ui.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="com.pablojuice.musicapp.ui.music.MusicFragment"
+        android:label="MusicFragment" >
+        <argument
+            android:name="musicItem"
+            app:argType="com.pablojuice.musicapp.model.MusicItem" />
+        <action
+            android:id="@+id/action_musicFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>
