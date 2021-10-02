@@ -18,7 +18,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/logoContainer"
+            android:id="@+id/ivContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/image_shape"
@@ -45,9 +45,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@{item.title}"
-            app:layout_constraintEnd_toEndOf="@+id/logoContainer"
-            app:layout_constraintStart_toStartOf="@+id/logoContainer"
-            app:layout_constraintTop_toBottomOf="@+id/logoContainer"
+            app:layout_constraintEnd_toEndOf="@+id/ivContainer"
+            app:layout_constraintStart_toStartOf="@+id/ivContainer"
+            app:layout_constraintTop_toBottomOf="@+id/ivContainer"
             tools:text="Track123" />
 
         <TextView

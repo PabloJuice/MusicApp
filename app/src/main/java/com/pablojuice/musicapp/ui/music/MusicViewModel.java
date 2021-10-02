@@ -1,4 +1,6 @@
 package com.pablojuice.musicapp.ui.music;
 
-public class MusicViewModel {
+import androidx.lifecycle.ViewModel;
+
+public class MusicViewModel extends ViewModel {
 }
