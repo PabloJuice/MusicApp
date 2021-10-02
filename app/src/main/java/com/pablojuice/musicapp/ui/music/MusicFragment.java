@@ -35,7 +35,7 @@ public class MusicFragment extends BaseFragment<FragmentMusicFullScreenBinding> 
                         MusicFragmentArgs.fromBundle(getArguments()).getMusicItems().getData()));
         binding.musicViewPager
                 .setCurrentItem(
-                        MusicFragmentArgs.fromBundle(getArguments()).getItemPosition());
+                        MusicFragmentArgs.fromBundle(getArguments()).getItemPosition(), false);
         binding.musicViewPager.setPageTransformer(new DepthPageTransformer());
     }
 }
