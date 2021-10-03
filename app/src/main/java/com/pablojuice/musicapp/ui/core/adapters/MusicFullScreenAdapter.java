@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MusicFullScreenAdapter extends RecyclerView.Adapter<MusicFullScreenAdapter.MusicFullScreenViewHolder> {
 
-    private List<MusicItem> items;
+    private final List<MusicItem> items;
 
     public MusicFullScreenAdapter(List<MusicItem> items) {
         this.items = items;
