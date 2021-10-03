@@ -67,7 +67,7 @@ public class MusicFragment extends BaseFragment<FragmentMusicFullScreenBinding> 
                 .setOnClickListener(v -> {
                     changeCurrentItem(1);
                 });
-
+        binding.backBtn.setOnClickListener(view -> goBack());
         binding.musicViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
 
             @Override
