@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.pablojuice.musicapp.model.MusicItem;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -39,17 +38,18 @@ public class MusicViewModel extends ViewModel {
     }
 
     public void togglePlayer() {
-        if (mediaPlayer.isPlaying()){
+        if (mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
-        }else {
+        } else {
             mediaPlayer.start();
         }
     }
-    public void stopPlayer(){
-        if (mediaPlayer.isPlaying()){
+
+    public void stopPlayer() {
+        if (mediaPlayer.isPlaying()) {
             mediaPlayer.stop();
         }
-        if (isPlayerReady.getValue()){
+        if (isPlayerReady.getValue()) {
             mediaPlayer.reset();
         }
         isPlayerReady.postValue(false);
