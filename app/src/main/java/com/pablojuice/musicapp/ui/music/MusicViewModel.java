@@ -17,7 +17,6 @@ public class MusicViewModel extends ViewModel {
     private final MutableLiveData<Boolean> isPlayerReady = new MutableLiveData<>(false);
     private MediaPlayer mediaPlayer;
     private List<MusicItem> items;
-    private boolean wasPlayed = false;
 
     public void setupMusicPlayer() {
         mediaPlayer = new MediaPlayer();
@@ -34,7 +33,7 @@ public class MusicViewModel extends ViewModel {
             mediaPlayer.setDataSource(url);
             mediaPlayer.setOnPreparedListener(mediaPlayer -> isPlayerReady.postValue(true));
             mediaPlayer.prepareAsync();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -44,11 +43,10 @@ public class MusicViewModel extends ViewModel {
             mediaPlayer.pause();
         }else {
             mediaPlayer.start();
-            wasPlayed = true;
         }
     }
     public void stopPlayer(){
-        if (wasPlayed){
+        if (mediaPlayer.isPlaying()){
             mediaPlayer.stop();
         }
         if (isPlayerReady.getValue()){
